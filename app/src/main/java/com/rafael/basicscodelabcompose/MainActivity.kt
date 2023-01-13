@@ -6,9 +6,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.animation.animateContentSize
 import androidx.compose.animation.core.Spring
-import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.animation.core.spring
-import androidx.compose.animation.core.tween
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -80,7 +78,8 @@ fun Greeting(name: String) {
         modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp)
     ) {
         Row(
-            modifier = Modifier.padding(24.dp)
+            modifier = Modifier
+                .padding(24.dp)
                 .animateContentSize(
                     animationSpec = spring(
                         dampingRatio = Spring.DampingRatioMediumBouncy,
@@ -104,7 +103,7 @@ fun Greeting(name: String) {
                         text = (
                                 ("Composem ipsum color sit lazy, " +
                                         "padding theme elit, sed do bouncy. ").repeat(4)
-                        )
+                                )
 
                     )
                 }
@@ -114,7 +113,7 @@ fun Greeting(name: String) {
                     imageVector = if (expanded.value) Icons.Filled.ExpandLess else Icons.Filled.ExpandMore,
                     contentDescription = if (expanded.value) {
                         "Show less"
-                    }else{
+                    } else {
                         "Show more"
                     }
                 )
